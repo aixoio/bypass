@@ -15,3 +15,5 @@ random 8 byte sequence. Once the client gets this packet it will sing the data w
 
 The server will then check is the signature is valid if it is **not** the server will send a unencrypted packet back to the client with a byte being `0b00000000` and then it will close the connection, but if the
 signature is valid the server will send back a byte with `0b00000001` (unencrypted) to tell the client it has been authenticated.
+
+Now that the server has verified the client, the client must verify the server.
