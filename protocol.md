@@ -19,3 +19,5 @@ signature is valid the server will send back a byte with `0b00000001` (unencrypt
 Now that the server has verified the client, the client must verify the server. First the client will send
 the server a packet with 8 random bytes and the server will sign the 8 bytes with it's private key and
 will encrypt the signature and send it back to the client for the client to verify.
+
+The client will then check the signature if it is valid it will send back an encrypted byte with `0b00000001` and if it is **not** valid it will send back a byte with `0b00000000` and close the connection.
